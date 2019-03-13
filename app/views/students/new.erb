@@ -1,0 +1,10 @@
+<form action="/students" method="post">
+  <label for="student">Student Name</label>
+  <input type="text" name="name" placeholder="Input your student's name.">
+  <select name="teacher">
+    <% @teachers.each do |t| %>
+      <option value="<%= t.id %>"><%= t.name %></option>
+    <% end %>
+  </select>
+  <input type="submit" name="submit" value="Add New Student">
+</form>

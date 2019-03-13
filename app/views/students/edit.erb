@@ -1,0 +1,11 @@
+<form action="/students/<%= @student.id %>" method="post">
+  <input type="hidden" name="_method" value="put">
+    <label for="student">Update Student's Name</label>
+    <input type="text" name="name" value="<%= @student.name %>">
+    <select name="teacher">
+      <% @teachers.each do |t| %>
+        <option value="<%= t.id %>"><%= t.name %></option>
+      <% end %>
+    </select>
+  <input type="submit" name="submit" value="Update Student Info">
+</form>

@@ -40,6 +40,7 @@ class TeachersController < Sinatra::Base
     redirect "/teachers/#{teacher.id}"
   end
 
+  #delete
   delete '/teachers/:id' do
     teacher = Teacher.find(params[:id])
     teacher.delete
