@@ -1,0 +1,9 @@
+<h1>Teachers</h1>
+
+<ul>
+  <% @teachers.each do |teacher| %>
+      <li><a href="/teachers/<%= teacher.id %>"><%= teacher.name %></a></li>
+  <% end %>
+</ul>
+
+<a href="/teachers/new">Create A New Teacher</a>

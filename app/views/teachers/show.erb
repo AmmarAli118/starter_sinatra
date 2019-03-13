@@ -1,0 +1,10 @@
+<h1>Class Roster for <%= @teacher.name %></h1>
+
+<ul>
+  <% @students.each do |student| %>
+    <li><a href="/students/<%= student.id %>"><%= student.name %></a></li>
+  <% end %>
+</ul>
+
+<a href="/teachers">Go back to Teacher Directory</a>
+<a href="/teachers/<%= @teacher.id %>/edit">Edit Teacher</a>
