@@ -1,0 +1,6 @@
+<form action="/teachers/<%= @teacher.id %>" method="post">
+  <input type="hidden" name="_method" value="put">
+    <label for="teacher">Update Teacher's Name</label>
+    <input type="text" name="name" value="<%= @teacher.name %>">
+  <input type="submit" name="submit" value="Update Teacher Info">
+</form>

@@ -10,7 +10,7 @@ class TeachersController < Sinatra::Base
     erb :index
   end
 
-  #create
+  #create new
   get '/teachers/new' do
     erb :new
   end
@@ -25,6 +25,25 @@ class TeachersController < Sinatra::Base
     @teacher = Teacher.find(params[:id])
     @students = @teacher.students
     erb :show
+  end
+
+  #update
+  get '/teachers/:id/edit' do
+    @teacher = Teacher.find(params[:id])
+    erb :edit
+  end
+
+  put '/teachers/:id' do
+    teacher = Teacher.find(params[:id])
+    teacher.update(name: params[:name])
+
+    redirect "/teachers/#{teacher.id}"
+  end
+
+  delete '/teachers/:id' do
+    teacher = Teacher.find(params[:id])
+    teacher.delete
+    redirect '/teachers'
   end
 
 

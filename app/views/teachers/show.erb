@@ -8,3 +8,8 @@
 
 <a href="/teachers">Go back to Teacher Directory</a>
 <a href="/teachers/<%= @teacher.id %>/edit">Edit Teacher</a>
+
+<form action="/teachers/<%= @teacher.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" name="submit" value="Delete This Teacher....Forever">
+</form>
